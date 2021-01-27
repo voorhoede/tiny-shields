@@ -1,0 +1,30 @@
+{
+  "name": "tiny-badge-maker",
+  "version": "1.0.0",
+  "description": "Lightweight svg badge maker",
+  "type": "module",
+  "main": "./src/main.mjs",
+  "exports": "./src/main.mjs",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "anafanafo": "^2.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voorhoede/tiny-shields.git",
+    "directory": "tiny-badge-maker"
+  },
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "license": "ISC",
+  "keywords": [
+    "badge",
+    "svg",
+    "shields"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "name": "tiny-shields-worker",
+  "main": "./main.js",
+  "dependencies": {},
+  "devDependencies": {}
+}

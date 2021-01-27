@@ -1,0 +1,6 @@
+{
+  "name": "tiny-shields",
+  "workspaces": [
+    "tiny-badge-maker"
+  ]
+}
