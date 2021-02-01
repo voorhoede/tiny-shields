@@ -6,8 +6,12 @@
   "main": "./src/main.mjs",
   "exports": "./src/main.mjs",
   "files": [
-    "src"
+    "/src/main.mjs",
+    "/src/escape-xml.mjs"
   ],
+  "scripts": {
+    "test": "node ./src/main.test.mjs"
+  },
   "dependencies": {
     "anafanafo": "^2.0.0"
   },
