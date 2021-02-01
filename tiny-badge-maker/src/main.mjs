@@ -1,4 +1,5 @@
-import anafanafo from 'anafanafo';
+import { oneLineTrim } from 'common-tags';
+import getTextWidth from './get-text-width.mjs';
 import escapeXml from './escape-xml.mjs';
 
 const colorPalette = {
@@ -43,7 +44,7 @@ export default function tinyBadgeMaker({
   const width = leftWidth + rightWidth;
   const accessibleText = createAccessibleText({ label, message });
 
-  return `
+  return oneLineTrim`
     <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="20" role="img" aria-label="${escapeXml(
     accessibleText
   )}">
@@ -75,9 +76,9 @@ function ensureOddNumber(number) {
   return number % 2 === 0 ? number + 1 : number;
 }
 
-function preferredTextWidth(string) {
+function preferredTextWidth(text) {
   // Increase chances of pixel grid alignment.
-  return ensureOddNumber(anafanafo(string, { font: '11px Verdana' }) | 0);
+  return ensureOddNumber(getTextWidth(text) | 0);
 }
 
 function createAccessibleText({ label, message }) {

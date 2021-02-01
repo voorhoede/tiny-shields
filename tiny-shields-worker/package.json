@@ -1,7 +1,13 @@
 {
   "private": true,
   "name": "tiny-shields-worker",
-  "main": "./main.js",
-  "dependencies": {},
-  "devDependencies": {}
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "rollup": "^2.38.1"
+  }
 }

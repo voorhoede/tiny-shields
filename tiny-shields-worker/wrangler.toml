@@ -1,5 +1,4 @@
 name = "tiny-shields"
-type = "webpack"
+type = "javascript"
 account_id = "e20ebc96b0121ea21bf59ea0a95e7997"
 workers_dev = true
-webpack_config = "webpack.config.js"

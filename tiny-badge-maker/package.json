@@ -13,9 +13,9 @@
     "test": "node ./src/main.test.mjs"
   },
   "dependencies": {
-    "anafanafo": "^2.0.0"
+    "binary-search": "^1.3.6",
+    "common-tags": "github:zspecza/common-tags#pull/212/head"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">= 14"
   },
