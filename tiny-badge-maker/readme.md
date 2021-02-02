@@ -1,4 +1,6 @@
 # Tiny Badge Maker
+[![npm][npm-badge]][npm]
+
 Create SVG badges following the [Shields badge specification](https://github.com/badges/shields/blob/5af5c480db/spec/SPECIFICATION.md).
 
 `npm install tiny-badge-maker`
@@ -35,3 +37,6 @@ Type: `number`
 Default: `5`
 
 A positive number that is used as padding in pixels.
+
+[npm]: https://npmjs.com/tiny-badge-maker
+[npm-badge]: https://tiny-shields.voorhoede.workers.dev/dynamic?label=npm&color=blue&url=https://registry.npmjs.org/-/package/css-declaration-sorter/dist-tags&query=latest
