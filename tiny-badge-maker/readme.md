@@ -39,4 +39,4 @@ Default: `5`
 A positive number that is used as padding in pixels.
 
 [npm]: https://npmjs.com/tiny-badge-maker
-[npm-badge]: https://tiny-shields.voorhoede.workers.dev/dynamic?label=npm&color=blue&url=https://registry.npmjs.org/-/package/css-declaration-sorter/dist-tags&query=latest
+[npm-badge]: https://tiny-shields.voorhoede.workers.dev/service/npm/css-declaration-sorter
