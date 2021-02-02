@@ -1,7 +1,7 @@
 import tinyBadgeMaker from 'tiny-badge-maker';
 
 const statusMapping = {
-  success: 'green',
+  success: 'brightgreen',
   failed: 'red',
   building: 'yellow',
 };
