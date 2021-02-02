@@ -20,6 +20,8 @@ async function handleRequest(request) {
           {
             headers: {
               'Content-Type': 'image/svg+xml',
+              'Cache-Control': `max-age=${60 * 5}`,
+              'Content-Disposition': 'inline',
             },
           },
         )
