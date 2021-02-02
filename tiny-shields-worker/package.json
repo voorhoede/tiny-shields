@@ -3,7 +3,11 @@
   "name": "tiny-shields-worker",
   "main": "./dist/main.js",
   "scripts": {
+    "dev": "rollup -c --watch",
     "build": "rollup -c"
+  },
+  "dependencies": {
+    "matchit": "^1.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",

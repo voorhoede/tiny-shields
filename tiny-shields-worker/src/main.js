@@ -1,4 +1,12 @@
+import { exec, match, parse } from 'matchit';
 import tinyBadgeMaker from 'tiny-badge-maker';
+import netlify from './services/netlify.mjs';
+import npm from './services/npm.mjs';
+
+const services = {
+  netlify,
+  npm,
+};
 
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request));
@@ -26,7 +34,25 @@ async function handleRequest(request) {
           },
         )
       ));
+  } else if (pathname.startsWith('/service')) {
+    const { name } = exec(
+      pathname,
+      match(pathname, [parse('/service/:name/*')])
+    );
+
+    if (!name || !services[name]) {
+      return new Response('Invalid service', { status: 400 });
+    }
+
+    const routeValues = exec(
+      pathname,
+      match(pathname, services[name].routes.map((route) =>
+        parse(`/service/:name${route}`)
+      ))
+    );
+
+    return services[name].handler(routeValues)
   }
 
-  return new Response(null, { status: 400 });
+  return new Response('Invalid endpoint', { status: 400 });
 }
