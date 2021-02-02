@@ -1,9 +1,11 @@
 import { exec, match, parse } from 'matchit';
 import tinyBadgeMaker from 'tiny-badge-maker';
+import lgtm from './services/lgtm.mjs';
 import netlify from './services/netlify.mjs';
 import npm from './services/npm.mjs';
 
 const services = {
+  lgtm,
   netlify,
   npm,
 };
