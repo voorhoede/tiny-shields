@@ -19,7 +19,7 @@ async function handleRequest(request) {
 
   if (pathname === '/dynamic') {
     return fetch(searchParams.get('url'))
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => (
         new Response(
           tinyBadgeMaker({
@@ -53,7 +53,7 @@ async function handleRequest(request) {
       ))
     );
 
-    return services[name].handler(routeValues)
+    return services[name].handler(routeValues);
   }
 
   return new Response('Invalid endpoint', { status: 400 });
