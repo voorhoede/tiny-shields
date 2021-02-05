@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "matchit": "^1.1.0",
-    "tiny-badge-maker": "^1.0.0"
+    "tiny-badge-maker": "^1.1.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
