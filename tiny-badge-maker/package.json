@@ -6,8 +6,10 @@
   "main": "./src/main.mjs",
   "exports": "./src/main.mjs",
   "files": [
+    "/src/escape-xml.mjs",
+    "/src/get-text-width.mjs",
     "/src/main.mjs",
-    "/src/escape-xml.mjs"
+    "/src/verdana-table.mjs"
   ],
   "scripts": {
     "test": "node ./src/main.test.mjs"
