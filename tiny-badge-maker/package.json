@@ -1,6 +1,6 @@
 {
   "name": "tiny-badge-maker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight svg badge maker",
   "type": "module",
   "main": "./src/main.mjs",
