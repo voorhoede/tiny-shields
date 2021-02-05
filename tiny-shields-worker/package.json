@@ -7,7 +7,8 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "matchit": "^1.1.0"
+    "matchit": "^1.1.0",
+    "tiny-badge-maker": "^1.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
