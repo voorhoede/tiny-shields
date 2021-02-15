@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "name": "services",
+  "main": "./src/index.mjs"
+}

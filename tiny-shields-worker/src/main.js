@@ -1,14 +1,6 @@
 import { exec, match, parse } from 'matchit';
 import tinyBadgeMaker from 'tiny-badge-maker';
-import lgtm from './services/lgtm.mjs';
-import netlify from './services/netlify.mjs';
-import npm from './services/npm.mjs';
-
-const services = {
-  lgtm,
-  netlify,
-  npm,
-};
+import services from 'services';
 
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request));
@@ -17,7 +9,7 @@ addEventListener('fetch', (event) => {
 async function handleRequest(request) {
   const { pathname, searchParams } = new URL(request.url);
 
-  if (pathname === '/dynamic') {
+  if (pathname === '/live') {
     return fetch(searchParams.get('url'))
       .then((response) => response.json())
       .then((data) => (
@@ -36,10 +28,10 @@ async function handleRequest(request) {
           },
         )
       ));
-  } else if (pathname.startsWith('/service')) {
+  } else {
     const { name } = exec(
       pathname,
-      match(pathname, [parse('/service/:name/*')])
+      match(pathname, [parse('/:name/*')])
     );
 
     if (!name || !services[name]) {
@@ -49,12 +41,20 @@ async function handleRequest(request) {
     const routeValues = exec(
       pathname,
       match(pathname, services[name].routes.map((route) =>
-        parse(`/service/:name${route}`)
+        parse(`/:name${route}`)
       ))
     );
 
-    return services[name].handler(routeValues);
+    return services[name].handler(routeValues)
+      .then((badgeData) => new Response(
+        tinyBadgeMaker(badgeData),
+        {
+          headers: {
+            'Content-Type': 'image/svg+xml',
+            'Cache-Control': `max-age=${60 * 5}`,
+            'Content-Disposition': 'inline',
+          },
+        }
+      ));
   }
-
-  return new Response('Invalid endpoint', { status: 400 });
 }
