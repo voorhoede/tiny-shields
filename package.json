@@ -1,7 +1,9 @@
 {
   "name": "tiny-shields",
   "workspaces": [
+    "services",
     "tiny-badge-maker",
-    "services"
+    "tiny-shields-website",
+    "tiny-shields-worker"
   ]
 }

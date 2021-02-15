@@ -1,5 +1,5 @@
 # Contributing
-To setup, clone the repository and run:
+To setup, clone the repository and from the repository root run:
 
 ```sh
 npm ci
@@ -9,7 +9,7 @@ npm ci
 Node.js, [latest LTS is recommended](https://nodejs.org/en/about/releases/).
 
 ### Tips
-0. The repository uses npm workspaces, which is bleeding edge and can sometimes not properly link packages.
+0. The repository uses npm workspaces, dependency installation is done from the root but each workspaces has its own scripts.
 
 0. To add a new service please create a new issue first.
 
