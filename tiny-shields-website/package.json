@@ -1,0 +1,23 @@
+{
+  "name": "tiny-shields-website",
+  "scripts": {
+    "dev": "microsite dev --no-open",
+    "build": "microsite build",
+    "start": "microsite serve"
+  },
+  "dependencies": {
+    "ky": "^0.25.1",
+    "ky-universal": "^0.8.2",
+    "microsite": "^1.1.0-next.6",
+    "preact": "^10.5.12"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-postcss": "^1.1.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">= 14"
+  }
+}
