@@ -1,11 +1,11 @@
 const routes = [
-  '/:id',
-  '/:scope/:id',
+  '/:packageName',
+  '/:scope/:packageName',
 ];
 
-const handler = ({ scope, id, parsedScope = scope ? `${scope}/` : '' }) => (
+const handler = ({ scope, packageName, parsedScope = scope ? `${scope}/` : '' }) => (
   fetch(
-    `https://registry.npmjs.org/-/package/${parsedScope}${id}/dist-tags`
+    `https://registry.npmjs.org/-/package/${parsedScope}${packageName}/dist-tags`
   )
     .then((response) => response.json())
     .then((data) => ({

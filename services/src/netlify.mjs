@@ -5,12 +5,12 @@ const statusMapping = {
 };
 
 const routes = [
-  '/:id',
+  '/:projectId',
 ];
 
-const handler = ({ id }) => (
+const handler = ({ projectId }) => (
   fetch(
-    `https://api.netlify.com/api/v1/badges/${id}/deploy-status`,
+    `https://api.netlify.com/api/v1/badges/${projectId}/deploy-status`,
     { method: 'HEAD' }
   )
     .then((response) => {
