@@ -3,16 +3,16 @@
   "scripts": {
     "dev": "microsite dev --no-open",
     "build": "microsite build",
-    "start": "microsite serve"
+    "start": "microsite serve --no-open"
   },
   "dependencies": {
     "ky": "^0.25.1",
     "ky-universal": "^0.8.2",
-    "microsite": "^1.1.0-next.6",
     "preact": "^10.5.12"
   },
   "devDependencies": {
     "@snowpack/plugin-postcss": "^1.1.0",
+    "microsite": "^1.1.0-next.7",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.0"
   },

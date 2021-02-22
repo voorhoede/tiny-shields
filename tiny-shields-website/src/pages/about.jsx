@@ -1,24 +1,19 @@
 import { Head, seo } from 'microsite/head';
-import { withHydrate } from 'microsite/hydrate';
-import { useState } from 'preact/hooks';
-import services from 'services';
 import Footer from '../components/footer';
 
-export default withHydrate(function HomePage() {
-  const [searchInput, setSearchInput] = useState('');
-
+export default function AboutPage() {
   return (
     <div class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-800 dark:text-white">
       <Head>
-        <seo.title>Tiny Shields</seo.title>
+        <seo.title>Tiny Shields | About</seo.title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <header class="relative flex flex-col items-center w-full max-w-lg px-6 py-10 mx-auto">
         <nav>
           <ul class="flex flex-row mb-16">
-            <li class="mr-4 font-semibold"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li class="mr-4"><a href="/">Home</a></li>
+            <li class="font-semibold"><a href="/about">About</a></li>
           </ul>
         </nav>
         <a
@@ -36,38 +31,40 @@ export default withHydrate(function HomePage() {
         </h1>
       </header>
 
-      <main class="max-w-2xl px-6 mx-auto">
-        <img
-          class="mx-auto mb-6 h-5"
-          src={`https://tiny-shields.voorhoede.workers.dev/${searchInput}`}
-          id="badgePreview"
-          aria-live="polite"
-        />
-        <label class="block p-2 mb-6 border-pink-400 border-l-2 pl-2 shadow rounded">
-          https://tiny-shields.voorhoede.workers.dev/
-          <input
-            class="bg-transparent"
-            value={searchInput}
-            onInput={(event) => setSearchInput(event.target.value)}
-            aria-controls="servicesList badgePreview"
-            autoFocus
-          />
-        </label>
-        <ul id="servicesList" aria-live="polite">
-          {Object.entries(services).filter(([key]) => key.startsWith(searchInput.split('/')[0])).map(([key, { routes }]) => (
-            <li class="flex mb-4">
-              <span class="w-32 font-bold text-right">{key}</span>
-              <ul class="w-96">
-                {routes.map((route) =>
-                  <li class="">{route}</li>)
-                }
-              </ul>
-            </li>
-          ))}
+      <main class="max-w-lg px-6 mx-auto">
+        <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Why?</h2>
+        <p class="mb-8">
+          The main goal of <pre class="inline">tiny shields</pre> is to make badges as fast and light as possible.
+        </p>
+
+        <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Highlights</h2>
+        <ul class="list-disc mb-8">
+          <li class="mb-2">
+            Serve badges from Cloudflare Workers with minimal latency.
+          </li>
+          <li class="mb-2">
+            Modern JavaScript, using ECMAScript modules.
+          </li>
+          <li class="mb-2">
+            Small codebase, badge maker is ~150 lines of code.
+          </li>
+          <li>
+            Follows the&nbsp;
+            <a class="underline" href="https://github.com/badges/shields/blob/5af5c480db/spec/SPECIFICATION.md">
+              Shields badge specification
+            </a>.
+          </li>
         </ul>
+
+        <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Prior Art</h2>
+        <p>
+          Inspired by&nbsp;
+          <a class="underline" href="https://shields.io/">Shields.io</a> and&nbsp;
+          <a class="underline" href="https://badgen.net/">Badgen</a>.
+        </p>
       </main>
 
       <Footer />
     </div>
   );
-});
+};
