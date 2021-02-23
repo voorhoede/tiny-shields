@@ -3,13 +3,13 @@ import Footer from '../components/footer';
 
 export default function AboutPage() {
   return (
-    <div class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-800 dark:text-white">
+    <div class="flex flex-col items-center min-h-screen px-6 bg-gray-50 dark:bg-gray-800 dark:text-white">
       <Head>
         <seo.title>Tiny Shields | About</seo.title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <header class="relative flex flex-col items-center w-full max-w-lg px-6 py-10 mx-auto">
+      <header class="relative flex flex-col items-center w-full max-w-lg py-10">
         <nav>
           <ul class="flex flex-row mb-16">
             <li class="mr-4"><a href="/">Home</a></li>
@@ -31,7 +31,7 @@ export default function AboutPage() {
         </h1>
       </header>
 
-      <main class="max-w-lg px-6 mx-auto">
+      <main class="max-w-lg">
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Why?</h2>
         <p class="mb-8">
           The main goal of <pre class="inline">tiny shields</pre> is to make badges as fast and light as possible.

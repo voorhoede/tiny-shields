@@ -8,13 +8,13 @@ export default withHydrate(function HomePage() {
   const [searchInput, setSearchInput] = useState('');
 
   return (
-    <div class="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-800 dark:text-white">
+    <div class="flex flex-col items-center min-h-screen px-6 bg-gray-50 dark:bg-gray-800 dark:text-white">
       <Head>
         <seo.title>Tiny Shields</seo.title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <header class="relative flex flex-col items-center w-full max-w-lg px-6 py-10 mx-auto">
+      <header class="relative flex flex-col items-center w-full max-w-lg py-10">
         <nav>
           <ul class="flex flex-row mb-16">
             <li class="mr-4 font-semibold"><a href="/">Home</a></li>
@@ -36,17 +36,17 @@ export default withHydrate(function HomePage() {
         </h1>
       </header>
 
-      <main class="max-w-2xl px-6 mx-auto">
+      <main class="flex flex-col items-center w-full max-w-lg">
         <img
-          class="mx-auto mb-6 h-5"
-          src={`https://tiny-shields.voorhoede.workers.dev/${searchInput}`}
+          class="mb-6 h-5"
+          src={`https:/tinyshields.dev/${searchInput}`}
           id="badgePreview"
           aria-live="polite"
         />
-        <label class="block p-2 mb-6 border-pink-400 border-l-2 pl-2 shadow rounded">
-          https://tiny-shields.voorhoede.workers.dev/
+        <label class="flex w-full p-2 mb-6 dark:text-black dark:bg-white border-pink-400 border-l-2 pl-2 shadow rounded">
+          https://tinyshields.dev/
           <input
-            class="bg-transparent"
+            class="w-full bg-transparent"
             value={searchInput}
             onInput={(event) => setSearchInput(event.target.value)}
             aria-controls="servicesList badgePreview"
@@ -68,6 +68,7 @@ export default withHydrate(function HomePage() {
       </main>
 
       <Footer />
+
     </div>
   );
 });
