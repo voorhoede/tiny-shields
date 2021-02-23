@@ -7,6 +7,7 @@
     "build": "rollup -c"
   },
   "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.1.0",
     "matchit": "^1.1.0",
     "tiny-badge-maker": "^1.1.1"
   },

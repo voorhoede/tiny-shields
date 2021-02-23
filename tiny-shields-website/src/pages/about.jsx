@@ -13,7 +13,7 @@ export default function AboutPage() {
         <nav>
           <ul class="flex flex-row mb-16">
             <li class="mr-4"><a href="/">Home</a></li>
-            <li class="font-semibold"><a href="/about">About</a></li>
+            <li class="font-semibold"><a href="/about.html">About</a></li>
           </ul>
         </nav>
         <a
@@ -34,7 +34,7 @@ export default function AboutPage() {
       <main class="max-w-lg">
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Why?</h2>
         <p class="mb-8">
-          The main goal of <pre class="inline">tiny shields</pre> is to make badges as fast and light as possible.
+          The main goal of tiny shields is to make badges as fast and light as possible.
         </p>
 
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Highlights</h2>

@@ -18,7 +18,7 @@ export default withHydrate(function HomePage() {
         <nav>
           <ul class="flex flex-row mb-16">
             <li class="mr-4 font-semibold"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about.html">About</a></li>
           </ul>
         </nav>
         <a

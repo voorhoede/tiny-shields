@@ -1,13 +1,22 @@
+import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
 import { exec, match, parse } from 'matchit';
 import tinyBadgeMaker from 'tiny-badge-maker';
 import services from 'services';
 
 addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest(event));
 });
 
-async function handleRequest(request) {
-  const { pathname, searchParams } = new URL(request.url);
+async function handleRequest(event) {
+  const { pathname, searchParams } = new URL(event.request.url);
+
+  if (
+    event.request.headers.get('Accept').includes('html') ||
+    pathname.startsWith('/_hydrate') ||
+    pathname === '/favicon.svg'
+  ) {
+    return getAssetFromKV(event);
+  }
 
   if (pathname === '/live') {
     return fetch(searchParams.get('url'))
