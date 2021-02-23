@@ -11,9 +11,8 @@ async function handleRequest(event) {
   const { pathname, searchParams } = new URL(event.request.url);
 
   if (
-    event.request.headers.get('Accept').includes('html') ||
-    pathname.startsWith('/_hydrate') ||
-    pathname === '/favicon.svg'
+    pathname.startsWith('/assets') ||
+    !pathname.endsWith('.svg')
   ) {
     return getAssetFromKV(event);
   }
@@ -50,7 +49,7 @@ async function handleRequest(event) {
     const routeValues = exec(
       pathname,
       match(pathname, services[name].routes.map((route) =>
-        parse(`/:name${route}`)
+        parse(`/:name${route}.svg`)
       ))
     );
 
