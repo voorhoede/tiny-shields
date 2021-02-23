@@ -4,6 +4,7 @@ account_id = "e20ebc96b0121ea21bf59ea0a95e7997"
 workers_dev = true
 
 [env.production]
+zone_id = "76c2f3bda9ab1ead97a2d75e24304651"
 route = "https://tinyshields.dev/*"
 
 [site]
