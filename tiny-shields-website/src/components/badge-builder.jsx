@@ -30,7 +30,7 @@ export default withHydrate(function BadgeBuilder() {
       <img
         class="mb-6 h-5"
         src={
-          filteredServices.length && searchInput.length >= 3
+          filteredServices.length && searchInput.includes('/')
           ? getUrlFromPath(searchInput)
           : '/assets/dummy-badge.svg'
         }
@@ -55,7 +55,7 @@ export default withHydrate(function BadgeBuilder() {
             <span class="ml-1">Copy</span>
           </button>
           <span
-            class={`absolute right-2 bottom-full mb-2 transition-opacity ${!copiedInput && 'opacity-0'}`}>
+            class={`absolute right-2 bottom-full mb-2 transition-opacity dark:text-white ${!copiedInput && 'opacity-0'}`}>
             Copied!
           </span>
         </label>
@@ -77,5 +77,5 @@ export default withHydrate(function BadgeBuilder() {
 });
 
 function getUrlFromPath(path) {
-  return `https:/tinyshields.dev/${path}.svg`
+  return `https://tinyshields.dev/${path}.svg`
 }
