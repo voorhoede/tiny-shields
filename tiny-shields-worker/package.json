@@ -1,6 +1,6 @@
 {
-  "private": true,
   "name": "tiny-shields-worker",
+  "private": true,
   "main": "./dist/main.js",
   "scripts": {
     "dev": "rollup -c --watch",

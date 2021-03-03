@@ -5,5 +5,8 @@
     "tiny-badge-maker",
     "tiny-shields-website",
     "tiny-shields-worker"
-  ]
+  ],
+  "engines": {
+    "node": "^15.0.0"
+  }
 }
