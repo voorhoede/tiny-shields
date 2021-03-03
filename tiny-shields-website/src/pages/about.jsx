@@ -12,7 +12,7 @@ export default function AboutPage() {
 
       <Header activePath="/about.html" />
 
-      <main class="max-w-lg">
+      <main class="max-w-lg mb-12">
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Why?</h2>
         <p class="mb-8">
           The main goal of tiny shields is to make badges as fast and light as possible.

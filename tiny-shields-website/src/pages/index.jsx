@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <Header activePath="/" />
 
-      <main class="flex flex-col items-center w-full max-w-lg">
+      <main class="flex flex-col items-center w-full max-w-lg mb-8">
 
         <BadgeBuilder />
 
