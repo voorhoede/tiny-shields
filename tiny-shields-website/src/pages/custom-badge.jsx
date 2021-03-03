@@ -51,11 +51,11 @@ export default function HomePage() {
 
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Example</h2>
         <p class="mb-4">
-          Fetch the npm version tagged as <pre class="inline">latest</pre> for <pre class="inline">microsite</pre>:
+          Fetch the npm version tagged as <code>latest</code> for the package <code>microsite</code>:
           https://tinyshields.dev/live?label=npm&url=https://registry.npmjs.org/-/package/microsite/dist-tags&query=latest&color=yellow
         </p>
         <img
-          src="https://tinyshields.dev/live?label=npm&url=https://registry.npmjs.org/-/package/css-declaration-sorter/dist-tags&query=latest&color=yellow"
+          src="https://tinyshields.dev/live?label=npm&url=https://registry.npmjs.org/-/package/microsite/dist-tags&query=latest&color=yellow"
           alt="npm latest tag version"
         />
       </main>

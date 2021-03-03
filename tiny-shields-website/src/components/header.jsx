@@ -27,7 +27,7 @@ export default function Header({ activePath }) {
         </svg>
       </a>
       <h1 class="text-3xl font-semibold">
-        <pre>tiny shields</pre>
+        <code>tiny shields</code>
       </h1>
     </header>
   );

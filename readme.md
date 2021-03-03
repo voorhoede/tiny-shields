@@ -1,4 +1,4 @@
-<h1><pre>tiny shields</pre></h1>
+<h1><code>tiny shields</code></h1>
 
 ℹ️ [About](https://tinyshields.dev/about.html)
 
