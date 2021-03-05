@@ -23,7 +23,7 @@ async function handleRequest(event) {
           }),
           {
             headers: {
-              'Content-Type': 'image/svg+xml',
+              'Content-Type': 'image/svg+xml;charset=utf-8',
               'Cache-Control': `max-age=${60 * 5}`,
               'Content-Disposition': 'inline',
             },
@@ -60,7 +60,7 @@ async function handleRequest(event) {
       tinyBadgeMaker(badgeData),
       {
         headers: {
-          'Content-Type': 'image/svg+xml',
+          'Content-Type': 'image/svg+xml;charset=utf-8',
           'Cache-Control': `max-age=${60 * 5}`,
           'Content-Disposition': 'inline',
         },
