@@ -1,5 +1,9 @@
 {
   "private": true,
   "name": "services",
-  "main": "./src/index.mjs"
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./external": "./src/external/index.mjs"
+  }
 }
