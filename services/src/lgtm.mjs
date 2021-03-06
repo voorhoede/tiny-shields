@@ -30,6 +30,7 @@ const handler = ({ language, host, user, repository }) => (
         label: `code quality: ${languageMapping[language] || language}`,
         message: grade,
         color: gradeMapping[grade],
+        maxAge: 60 * 60 * 24,
       };
     })
 );

@@ -31,7 +31,7 @@ async function handleRequest(event) {
           {
             headers: {
               'Content-Type': 'image/svg+xml;charset=utf-8',
-              'Cache-Control': `max-age=${60 * 5}`,
+              'Cache-Control': `max-age=${60 * 10},immutable`,
               'Content-Disposition': 'inline',
             },
           },
@@ -63,13 +63,13 @@ async function handleRequest(event) {
   );
 
   return services[name].handler(routeValues)
-    .then((badgeData) => {
+    .then(({ label, message, color, maxAge }) => {
       const response = new Response(
-        tinyBadgeMaker(badgeData),
+        tinyBadgeMaker({ label, message, color }),
         {
           headers: {
             'Content-Type': 'image/svg+xml;charset=utf-8',
-            'Cache-Control': `max-age=${60 * 5}`,
+            'Cache-Control': `max-age=${maxAge},immutable`,
             'Content-Disposition': 'inline',
           },
         }

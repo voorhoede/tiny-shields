@@ -22,6 +22,7 @@ const handler = ({ projectId }) => (
         label: 'netlify',
         message: status,
         color: statusMapping[status],
+        maxAge: 60 * 60,
       };
     })
 );

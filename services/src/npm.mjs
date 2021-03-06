@@ -12,6 +12,7 @@ const handler = ({ scope, packageName, parsedScope = scope ? `${scope}/` : '' })
       label: 'npm',
       message: data.latest,
       color: 'blue',
+      maxAge: 60 * 60 * 24,
     }))
 );
 
