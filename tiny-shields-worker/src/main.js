@@ -4,11 +4,18 @@ import { flatten } from 'flattenizer';
 import tinyBadgeMaker from 'tiny-badge-maker';
 import services from 'services';
 
+const cloudflareCache = caches.default;
+
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event));
 });
 
 async function handleRequest(event) {
+  const cachedResponse = await cloudflareCache.match(event.request.url);
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+
   const { pathname, searchParams } = new URL(event.request.url);
 
   if (pathname === '/live') {
@@ -56,14 +63,20 @@ async function handleRequest(event) {
   );
 
   return services[name].handler(routeValues)
-    .then((badgeData) => new Response(
-      tinyBadgeMaker(badgeData),
-      {
-        headers: {
-          'Content-Type': 'image/svg+xml;charset=utf-8',
-          'Cache-Control': `max-age=${60 * 5}`,
-          'Content-Disposition': 'inline',
-        },
-      }
-    ));
+    .then((badgeData) => {
+      const response = new Response(
+        tinyBadgeMaker(badgeData),
+        {
+          headers: {
+            'Content-Type': 'image/svg+xml;charset=utf-8',
+            'Cache-Control': `max-age=${60 * 5}`,
+            'Content-Disposition': 'inline',
+          },
+        }
+      );
+
+      event.waitUntil(cloudflareCache.put(event.request.url, response.clone()));
+
+      return response;
+    });
 }
