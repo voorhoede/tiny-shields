@@ -15,7 +15,7 @@ export default function HomePage() {
       <main class="max-w-lg mb-12">
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Live endpoint</h2>
         <p class="mb-8">
-          Create a custom badge from a JSON endpoint using <pre class="inline">https://tinyshields.dev/live</pre>.
+          Create a custom badge from a JSON endpoint using https://tinyshields.dev/live.
         </p>
 
         <h2 class="mb-3 text-2xl border-pink-400 border-l-2 pl-2">Query parameters</h2>
