@@ -1,10 +1,12 @@
+import handledFetch from './handled-fetch.mjs';
+
 const routes = [
   '/:packageName',
   '/:scope/:packageName',
 ];
 
 const handler = ({ scope, packageName, parsedScope = scope ? `${scope}/` : '' }) => (
-  fetch(
+  handledFetch(
     `https://registry.npmjs.org/-/package/${parsedScope}${packageName}/dist-tags`
   )
     .then((response) => response.json())

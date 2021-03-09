@@ -1,3 +1,5 @@
+import handledFetch from './handled-fetch.mjs';
+
 const statusMapping = {
   'success': 'brightgreen',
   'failed': 'red',
@@ -9,7 +11,7 @@ const routes = [
 ];
 
 const handler = ({ projectId }) => (
-  fetch(
+  handledFetch(
     `https://api.netlify.com/api/v1/badges/${projectId}/deploy-status`,
     { method: 'HEAD' }
   )

@@ -1,3 +1,5 @@
+import handledFetch from './handled-fetch.mjs';
+
 const gradeMapping = {
   'A+': 'brightgreen',
   'A': 'green',
@@ -17,7 +19,7 @@ const routes = [
 ];
 
 const handler = ({ language, host, user, repository }) => (
-  fetch(
+  handledFetch(
     `https://lgtm.com/api/v0.1/project/${host}/${user}/${repository}/details`
   )
     .then((response) => response.json())
