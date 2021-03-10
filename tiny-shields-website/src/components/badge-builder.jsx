@@ -34,6 +34,7 @@ export default withHydrate(function BadgeBuilder() {
           ? getUrlFromPath(searchInput)
           : '/assets/dummy-badge.svg'
         }
+        alt=""
         id="badgePreview"
         aria-live="polite"
       />
