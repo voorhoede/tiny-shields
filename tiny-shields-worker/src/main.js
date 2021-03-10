@@ -67,14 +67,12 @@ async function handleRequest(event) {
       label: response.url,
       message: response.statusText,
       color: 'lightgrey',
-      status: response.status,
       maxAge: 60,
     }))
-    .then(({ label, message, color, status = 200, maxAge }) => {
+    .then(({ label, message, color, maxAge }) => {
       const response = new Response(
         tinyBadgeMaker({ label, message, color }),
         {
-          status,
           headers: {
             'Content-Type': 'image/svg+xml;charset=utf-8',
             'Cache-Control': `max-age=${maxAge},immutable`,
