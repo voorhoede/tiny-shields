@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div class="flex flex-col items-center min-h-screen px-6 bg-gray-50 dark:bg-gray-800 dark:text-white">
       <Head>
-        <seo.title>Tiny Shields</seo.title>
+        <seo.title>Custom Badge | tiny shields</seo.title>
         <link rel="icon" href="/assets/favicon.svg" />
       </Head>
 

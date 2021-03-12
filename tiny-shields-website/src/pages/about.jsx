@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div class="flex flex-col items-center min-h-screen px-6 bg-gray-50 dark:bg-gray-800 dark:text-white">
       <Head>
-        <seo.title>Tiny Shields | About</seo.title>
+        <seo.title>About | tiny shields</seo.title>
         <link rel="icon" href="/assets/favicon.svg" />
       </Head>
 
