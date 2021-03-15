@@ -66,7 +66,7 @@ export default withHydrate(function BadgeBuilder() {
           <li class="flex mb-4">
             <span class="w-32 font-bold text-right">{key}</span>
             <ul class="w-96">
-              {routes.map((route) =>
+              {Object.keys(routes).map((route) =>
                 <li class="">{route}</li>)
               }
             </ul>
