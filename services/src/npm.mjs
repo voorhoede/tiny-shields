@@ -19,6 +19,5 @@ const routes = {
 };
 
 export default {
-  handler,
   routes,
 };
