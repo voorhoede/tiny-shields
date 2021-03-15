@@ -1,10 +1,5 @@
 import handledFetch from './handled-fetch.mjs';
 
-const routes = [
-  '/:packageName',
-  '/:scope/:packageName',
-];
-
 const handler = ({ scope, packageName, parsedScope = scope ? `${scope}/` : '' }) => (
   handledFetch(
     `https://registry.npmjs.org/-/package/${parsedScope}${packageName}/dist-tags`
@@ -18,7 +13,12 @@ const handler = ({ scope, packageName, parsedScope = scope ? `${scope}/` : '' })
     }))
 );
 
+const routes = {
+  '/:packageName': handler,
+  '/:scope/:packageName': handler,
+};
+
 export default {
-  routes,
   handler,
+  routes,
 };

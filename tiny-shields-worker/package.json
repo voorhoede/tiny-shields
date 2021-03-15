@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
+    "wrangler": "wrangler",
     "deploy": "wrangler publish --env $NODE_ENV"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.1.0",
     "flattenizer": "^1.1.1",
-    "matchit": "^1.1.0",
+    "my-way": "^2.0.0",
     "tiny-badge-maker": "^1.1.1"
   },
   "devDependencies": {

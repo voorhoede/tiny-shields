@@ -14,10 +14,6 @@ const languageMapping = {
   'javascript': 'js/ts',
 };
 
-const routes = [
-  '/grade/:language/:host/:user/:repository',
-];
-
 const handler = ({ language, host, user, repository }) => (
   handledFetch(
     `https://lgtm.com/api/v0.1/project/${host}/${user}/${repository}/details`
@@ -37,7 +33,11 @@ const handler = ({ language, host, user, repository }) => (
     })
 );
 
+const routes = {
+  '/grade/:language/:host/:user/:repository': handler,
+};
+
 export default {
-  routes,
   handler,
+  routes,
 };

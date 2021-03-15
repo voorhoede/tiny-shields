@@ -1,5 +1,5 @@
 import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
-import { exec, match, parse } from 'matchit';
+import matchRoute from 'my-way';
 import { flatten } from 'flattenizer';
 import tinyBadgeMaker from 'tiny-badge-maker';
 import services from 'services';
@@ -46,23 +46,22 @@ async function handleRequest(event) {
     return getAssetFromKV(event);
   }
 
-  const { name } = exec(
-    pathname,
-    match(pathname, [parse('/:name/*')])
-  );
+  const { serviceName } = matchRoute('/:serviceName/:path*', pathname);
 
-  if (!name || !services[name]) {
+  if (!serviceName || !services[serviceName]) {
     return new Response('Invalid service', { status: 400 });
   }
 
-  const routeValues = exec(
-    pathname,
-    match(pathname, services[name].routes.map((route) =>
-      parse(`/:name${route}.svg`)
-    ))
-  );
+  let routeValues;
+  const route = Object.keys(services[serviceName].routes).find((route) => {
+    routeValues = matchRoute(
+      `/:serviceName${route}`,
+      pathname.replace('.svg', '')
+    );
+    return routeValues;
+  });
 
-  return services[name].handler(routeValues)
+  return services[serviceName].routes[route](routeValues)
     .catch((response) => ({
       label: response.url,
       message: response.statusText,

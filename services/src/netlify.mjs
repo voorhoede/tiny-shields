@@ -6,10 +6,6 @@ const statusMapping = {
   'building': 'yellow',
 };
 
-const routes = [
-  '/:projectId',
-];
-
 const handler = ({ projectId }) => (
   handledFetch(
     `https://api.netlify.com/api/v1/badges/${projectId}/deploy-status`,
@@ -29,7 +25,11 @@ const handler = ({ projectId }) => (
     })
 );
 
+const routes = {
+  '/:projectId': handler,
+};
+
 export default {
-  routes,
   handler,
+  routes,
 };
