@@ -10,7 +10,10 @@ export default function Header({ activePath }) {
       <nav>
         <ul class="flex flex-row mb-16">
           {Object.entries(navigationItems).map(([path, label]) => (
-            <li class={`mr-4 ${path === activePath && 'font-semibold'}`}>
+            <li
+              class={`mr-4 ${path === activePath && 'font-semibold'}`}
+              aria-current={path === activePath ? 'page' : undefined}
+            >
               <a href={path}>{label}</a>
             </li>
           ))}
