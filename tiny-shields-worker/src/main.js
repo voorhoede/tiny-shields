@@ -12,9 +12,9 @@ addEventListener('fetch', (event) => {
 
 async function handleRequest(event) {
   const cachedResponse = await cloudflareCache.match(event.request.url);
-  // if (cachedResponse) {
-  //   return cachedResponse;
-  // }
+  if (cachedResponse) {
+    return cachedResponse;
+  }
 
   const { pathname, searchParams } = new URL(event.request.url);
 
