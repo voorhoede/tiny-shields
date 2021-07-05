@@ -42,7 +42,7 @@ export default function HomePage() {
             <li>
               <span class="font-mono">color:</span>
               Background color to show on the right side of the badge, accepts a hex value or&nbsp;
-              <a class="underline" href="https://github.com/voorhoede/tiny-shields/tree/master/tiny-badge-maker#color">
+              <a class="underline" href="https://github.com/voorhoede/tiny-shields/tree/main/tiny-badge-maker#color">
                 one of these colors.
               </a>
             </li>
