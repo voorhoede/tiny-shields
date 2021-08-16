@@ -2,6 +2,6 @@
 
 ℹ️ [About](https://tinyshields.dev/about.html)
 
-🔖 [Badge Builder](https://tinyshields.dev/) 
+🔖 [Suggest a service](https://github.com/voorhoede/tiny-shields/discussions/categories/services)
 
 🛠️ Made by [De Voorhoede](https://voorhoede.nl/)
