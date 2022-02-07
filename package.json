@@ -7,6 +7,6 @@
     "tiny-shields-worker"
   ],
   "engines": {
-    "node": "^15.0.0"
+    "node": "^16.0.0"
   }
 }

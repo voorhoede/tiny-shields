@@ -1,7 +1,5 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/components/**/*.jsx', './src/pages/**/*.jsx'],
-  darkMode: 'media',
+  content: ['./src/components/**/*.jsx', './src/pages/**/*.jsx'],
   theme: {
     extend: {
       colors: {
