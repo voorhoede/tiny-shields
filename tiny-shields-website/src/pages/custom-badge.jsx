@@ -1,6 +1,6 @@
 import { Head, seo } from 'microsite/head';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 
 export default function HomePage() {
   return (

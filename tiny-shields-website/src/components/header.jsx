@@ -4,7 +4,7 @@ const navigationItems = {
   '/about.html': 'About',
 }
 
-export default function Header({ activePath }) {
+export function Header({ activePath }) {
   return (
     <header class="relative flex flex-col items-center w-full max-w-lg py-10">
       <nav>

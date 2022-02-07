@@ -1,4 +1,4 @@
-export default function CopyIcon() {
+export function CopyIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
       <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z" />

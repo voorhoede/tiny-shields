@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
 import { withHydrate } from 'microsite/hydrate';
-import CopyIcon from './copy-icon';
+import { CopyIcon } from './copy-icon';
 import services from 'services';
 
 export default withHydrate(function BadgeBuilder() {

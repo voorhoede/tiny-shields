@@ -1,7 +1,7 @@
 import { Head, seo } from 'microsite/head';
 import BadgeBuilder from '../components/badge-builder';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 
 export default function HomePage() {
   return (
