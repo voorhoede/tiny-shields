@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "dev": "node ./server",
+    "build": "npm run build:client && npm run build:ssr",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr"
+  },
+  "dependencies": {
+    "@preact/preset-vite": "^2.1.7",
+    "compression": "^1.7.4",
+    "express": "^4.17.2",
+    "preact": "^10.6.5",
+    "preact-render-to-string": "^5.1.19",
+    "vite": "^2.7.12",
+    "vite-plugin-ssr": "^0.3.51"
+  },
+  "devDependencies": {
+    "rollup-plugin-visualizer": "^5.5.4"
+  }
+}
