@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'preact/hooks';
-import { withHydrate } from 'microsite/hydrate';
 import { CopyIcon } from './copy-icon';
 import services from 'services';
 
-export default withHydrate(function BadgeBuilder() {
+export function BadgeBuilder() {
   const [searchInput, setSearchInput] = useState('');
   const [filteredServices, setFilteredServices] = useState([]);
   const [copiedInput, setCopiedInput] = useState(false);
@@ -75,7 +74,7 @@ export default withHydrate(function BadgeBuilder() {
       </ul>
     </>
   );
-});
+};
 
 function getUrlFromPath(path) {
   return `https://tinyshields.dev/${path}.svg`

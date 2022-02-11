@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/base.astro';
+import { BadgeBuilder } from '../components/badge-builder.jsx';
+import { Header } from '../components/header.jsx';
+import { Footer } from '../components/footer.jsx';
+---
+
+<BaseLayout title="tiny shields">
+  <div class="flex flex-col items-center min-h-screen px-6 bg-gray-50 dark:bg-gray-800 dark:text-white">
+
+    <Header activePath="/" />
+
+    <main class="flex flex-col items-center w-full max-w-lg mb-8">
+
+      <BadgeBuilder client:load />
+
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

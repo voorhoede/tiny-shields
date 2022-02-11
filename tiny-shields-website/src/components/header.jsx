@@ -1,7 +1,7 @@
 const navigationItems = {
   '/': 'Home',
-  '/custom-badge.html': 'Custom Badge',
-  '/about.html': 'About',
+  '/custom-badge': 'Custom Badge',
+  '/about': 'About',
 }
 
 export function Header({ activePath }) {
