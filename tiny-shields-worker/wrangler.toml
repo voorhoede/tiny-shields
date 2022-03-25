@@ -2,6 +2,7 @@ name = "tiny-shields"
 type = "javascript"
 account_id = "e20ebc96b0121ea21bf59ea0a95e7997"
 workers_dev = true
+compatibility_date = "2022-03-21"
 
 [build]
 command = ""
