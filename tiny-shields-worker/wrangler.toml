@@ -1,14 +1,11 @@
 name = "tiny-shields"
-type = "javascript"
 account_id = "e20ebc96b0121ea21bf59ea0a95e7997"
+main = "./src/main.js"
 workers_dev = true
-compatibility_date = "2022-03-21"
+compatibility_date = "2022-06-21"
 
 [build]
 command = ""
-
-[build.upload]
-format = "service-worker"
 
 [env.production]
 zone_id = "76c2f3bda9ab1ead97a2d75e24304651"
@@ -16,4 +13,3 @@ route = "https://tinyshields.dev/*"
 
 [site]
 bucket = "../tiny-shields-website/dist"
-entry-point = "."
