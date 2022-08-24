@@ -2,8 +2,6 @@ name: Deployment
 
 on:
   push:
-    branches:
-      - main
     paths:
       - '.github/**'
       - 'tiny-shields-worker/**'
@@ -11,8 +9,12 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
     name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
     steps:
       - uses: actions/checkout@v3
 
@@ -37,9 +39,13 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Deploy
-        run: npm run deploy
-        working-directory: 'tiny-shields-worker'
-        env:
-          NODE_ENV: production
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      - name: Build worker
+        run: npm run build
+        working-directory: tiny-shields-worker
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "tiny-shields"
+          root: tiny-shields-worker
+          entrypoint: "./dist/main.js"

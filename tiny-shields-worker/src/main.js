@@ -1,21 +1,13 @@
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler';
 import matchRoute from 'my-way';
 import { flatten } from 'flattenizer';
 import tinyBadgeMaker from 'tiny-badge-maker';
 import services from 'services';
-
-const cloudflareCache = caches.default;
 
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event));
 });
 
 async function handleRequest(event) {
-  const cachedResponse = await cloudflareCache.match(event.request.url);
-  if (cachedResponse) {
-    return cachedResponse;
-  }
-
   const { pathname, searchParams } = new URL(event.request.url);
 
   if (pathname === '/live') {
@@ -43,7 +35,7 @@ async function handleRequest(event) {
     pathname.startsWith('/assets') ||
     !pathname.endsWith('.svg')
   ) {
-    return getAssetFromKV(event);
+    return new Response('Asset', { status: 200 });
   }
 
   const { serviceName } = matchRoute('/:serviceName/:path*', pathname);
@@ -79,8 +71,6 @@ async function handleRequest(event) {
           },
         }
       );
-
-      event.waitUntil(cloudflareCache.put(event.request.url, response.clone()));
 
       return response;
     });

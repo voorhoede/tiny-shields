@@ -3,17 +3,17 @@
   "private": true,
   "main": "./dist/main.js",
   "scripts": {
-    "dev": "wrangler dev",
-    "wrangler": "wrangler",
-    "deploy": "wrangler publish --env $NODE_ENV"
+    "dev": "rollup --config --watch",
+    "build": "rollup --config"
   },
   "dependencies": {
-    "@cloudflare/kv-asset-handler": "^0.2.0",
     "flattenizer": "^1.1.1",
     "my-way": "^2.0.0",
     "tiny-badge-maker": "^1.1.1"
   },
   "devDependencies": {
-    "wrangler": "^2.0.14"
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.78.1"
   }
 }
