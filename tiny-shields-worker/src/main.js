@@ -3,6 +3,8 @@ import { flatten } from 'flattenizer';
 import tinyBadgeMaker from 'tiny-badge-maker';
 import services from 'services';
 
+import { serveDir } from "https://deno.land/std@0.152.0/http/file_server.ts";
+
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event));
 });
@@ -36,11 +38,8 @@ async function handleRequest(event) {
     !pathname.endsWith('.svg')
   ) {
     console.log({ event });
-    const file = await Deno.readFile('./dist/website/index.html');
-    return new Response(file, {
-      headers: {
-        "content-type": "text/html; charset=utf-8",
-      },
+    return serveDir(event.request, {
+      fsRoot: './dist/website',
     });
   }
 
