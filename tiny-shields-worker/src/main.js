@@ -35,7 +35,13 @@ async function handleRequest(event) {
     pathname.startsWith('/assets') ||
     !pathname.endsWith('.svg')
   ) {
-    return new Response('Asset', { status: 200 });
+    console.log({ event });
+    const file = await Deno.readFile('./dist/website/index.html');
+    return new Response(file, {
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+      },
+    });
   }
 
   const { serviceName } = matchRoute('/:serviceName/:path*', pathname);

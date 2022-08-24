@@ -43,6 +43,8 @@ jobs:
         run: npm run build
         working-directory: tiny-shields-worker
 
+      - run: cp -r tiny-shields-website/dist/ tiny-shields-worker/dist/website
+
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
